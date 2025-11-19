@@ -1,4 +1,3 @@
-import React from "react";
 import "./assets/App.css";
 import NavBar from "./components/Navbar/Navbar";
 import ShowMenu from "./components/ShowMenu/ShowMenu";
