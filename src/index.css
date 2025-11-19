@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+@theme {
+  --color-blackFlorest: #283618;
+  --color-oliveLeaf: #606c38;
+  --color-softFawn: #e1bb80;
+  --color-deepWalnut: #543512;
+  --color-oliveWood: #83552d;
+}
