@@ -1,4 +1,4 @@
-import dbItems from "../../assets/DBmok";
+import dbItems from "../../../assets/DBmok";
 
 function setRandomItem() {
   const min = 0;
