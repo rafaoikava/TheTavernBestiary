@@ -1,12 +1,21 @@
 import "../../assets/App.css";
+import MenuItem from "../MenuItem/MenuItem";
 
 export default function ShowMenu() {
   return (
-    <div className="bg-blackFlorest grid grid-cols-4 p-4 gap-6 m-10">
-      <div className="bg-oliveWood">teste</div>
-      <div className="bg-oliveWood">teste</div>
-      <div className="bg-oliveWood">teste</div>
-      <div className="bg-oliveWood">teste</div>
+    <div className="bg-blackFlorest grid grid-cols-4 p-4 gap-4 items-center justify-items-center">
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
+      <MenuItem />
     </div>
   );
 }
