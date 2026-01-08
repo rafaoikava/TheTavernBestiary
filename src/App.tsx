@@ -5,6 +5,7 @@ import LoginComponent from "./components/Login/LoginComponent/LoginComponent";
 import PublicLayout from "./publicLayout/PublicLayout";
 import PrivateLayout from "./privateLayout/PrivateLayout";
 import Admin from "./pages/admin";
+import ColorsBase from "./pages/color";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route element={<PrivateLayout />}>
           <Route path="/admin" element={<Admin />} />
         </Route>
+        <Route path="/color" element={<ColorsBase />} />
       </Routes>
     </BrowserRouter>
   );

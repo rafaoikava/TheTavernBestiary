@@ -6,7 +6,7 @@ export default function PublicLayout() {
   return (
     <div className="flex flex-col min-h-screen gap-4">
       <NavBar />
-      <main>
+      <main className=" bg-blackFlorest flex grow items-center justify-center">
         <Outlet />
       </main>
       <FooterComponent />

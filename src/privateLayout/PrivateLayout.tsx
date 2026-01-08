@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../components/User/Navbar/Navbar";
-import FooterComponent from "../components/User/Footer/FooterComponent";
 
 export default function PrivateLayout() {
   return (
     <>
-      <NavBar />
-      <Outlet />
-      <FooterComponent />
+      <div className="flex h-screen">
+        <div className="bg-deepWalnut w-3xs">teste menu</div>
+        <main className="bg-softFawn w-screen items-center justify-center flex">
+          <Outlet />
+        </main>
+      </div>
     </>
   );
 }
