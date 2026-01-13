@@ -1,13 +1,28 @@
+import type { User } from "firebase/auth";
+import { auth } from "../../../../firebaseConfig";
 import { loginGoogle } from "../../../services/firebaseAuth";
+import { useContext } from "react";
+import { UserContext } from "../../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginComponent() {
+  const context = useContext(UserContext);
+  const navigate = useNavigate();
+  if (!context) return null;
+  const { user, setUser } = context;
+  console.log("user -->", user, "current -->", auth.currentUser);
+
+  async function handleLogin(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    const userLogged: User | null = await loginGoogle();
+    setUser(userLogged);
+    if (userLogged) navigate("/admin");
+  }
+
   return (
     <>
       <div className="flex col-auto gap-10">
-        <form
-          className=" bg-softFawn flex flex-col items-center justify-center h-96 w-96 rounded-2xl gap-6"
-          action="/admin"
-        >
+        <form className=" bg-softFawn flex flex-col items-center justify-center h-96 w-96 rounded-2xl gap-6">
           <div className="flex flex-col gap-7 items-center justify-center -translate-y-10">
             <p className="text-3xl font-bold text-deepWalnut">Criar conta</p>
             <section>Insira seus dados para criar a sua conta </section>
@@ -27,7 +42,7 @@ export default function LoginComponent() {
             </div>
           </div>
           <div>
-            <button className="formbutton" type="submit" onClick={loginGoogle}>
+            <button className="formbutton" type="button" onClick={handleLogin}>
               Criar conta
             </button>
           </div>
@@ -41,10 +56,7 @@ export default function LoginComponent() {
             <section>Insira seus dados para realizar o login</section>
           </div>
           <div>
-            <form
-              className="flex flex-col gap-4 -translate-y-6 items-center justify-center"
-              action="/admin"
-            >
+            <form className="flex flex-col gap-4 -translate-y-6 items-center justify-center">
               <input
                 className="text-center input-form"
                 type="text"
@@ -58,9 +70,7 @@ export default function LoginComponent() {
             </form>
           </div>
           <div>
-            <button className="formbutton" type="submit">
-              Entrar
-            </button>
+            <button className="formbutton">temp</button>
           </div>
         </div>
       </div>
